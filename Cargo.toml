@@ -1,0 +1,11 @@
+[package]
+name = "pubsub_rust"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+google-cloud-gax = "0.19.0"
+google-cloud-googleapis = "0.16.1"
+google-cloud-pubsub = "0.30.0"
+tokio = { version = "1.44.1", features = ["macros", "rt-multi-thread"] }
+tokio-util = "0.7.14"
