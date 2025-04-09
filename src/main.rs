@@ -1,3 +1,4 @@
+use std::str::FromStr;
 use google_cloud_pubsub::client::{Client, ClientConfig};
 use google_cloud_googleapis::pubsub::v1::PubsubMessage;
 use google_cloud_pubsub::topic::TopicConfig;
@@ -8,8 +9,9 @@ use tokio_util::sync::CancellationToken;
 
 #[tokio::main]
 async fn main() {
+    
     let config = ClientConfig::default().with_auth().await.unwrap();
-    let client = Client::new(config).await.unwrap();
+    let result: () = run(config).await.unwrap();
 }
 
 async fn run(config: ClientConfig) -> Result<(), Status> {
